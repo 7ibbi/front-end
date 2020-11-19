@@ -1,3 +1,9 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
 :root {
     --color-purple: #535198;
 }
@@ -9,14 +15,16 @@ body {
 
 .header {
     background-color: var(--color-purple);
-    padding-bottom: 200px;
+    padding-bottom: 30vh;
+
 }
 
 .nav-list {
+    padding-top: 2em;
     display: flex;
     justify-content: center;
     text-align: center;
-    position: sticky;
+
 }
 
 .nav-list ul {
