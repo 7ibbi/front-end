@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <title>Travel</title>
-    <link rel="stylesheet" href="main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="travel.css"/>
+    <link rel="stylesheet" href="header&footer.css"/>
 </head>
 <body>
-    <header>
-        <nav>
+    <header class="header">
+        <nav class="nav-list">
             <ul>
                 <li>
-                    <a href="travel.html">Home</a>
+                    <a href="travel.html">home</a>
                 </li>
                 <li>
-                    <a href="destinations.html">Destinations</a>
+                    <a href="destinations.html">destinations</a>
                 </li>
                 <li>
-                    <a href="#">Language</a>
+                    <a href="#">language</a>
                 </li>
             </ul>
         </nav>
-        <h1>Travel</h1>
+        <h1>Travel website</h1>
     </header>
 
     <main>
-        <section>
+        <section class="description">
             <h2>Reasons for travelling</h2>
             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a
                 type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
@@ -32,50 +34,61 @@
             </p>
         </section>
 
-        <section>
-            <article>
-                <h2>First article</h2>
-                <h3>First article subtitle</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                    'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
-                    sometimes on purpose (injected humour and the like).</p>
-                <picture>
-                    <source media="(min-width: 650px)" srcset="https://picsum.photos/id/10/200/300">
-                    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/902/">
-                    <img src="https://picsum.photos/id/102/" alt="Picture">
+        <section class="article">
+            <article id="article-1">
+                <div id="text-1" class="text">
+                    <h4>First article</h4>
+                    <h5>First article subtitle</h5>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+                        'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
+                        sometimes on purpose (injected humour and the like).</p>
+                </div>
+<!--                <img id="picture-1" src="https://picsum.photos/id/10/800/300"/>-->
+                <picture id="picture-1">
+                    <source media="(min-width: 640px)" srcset="https://picsum.photos/id/10/800/300">
+                    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/902/800/300">
+                    <img src="https://picsum.photos/id/102/800/300" alt="Picture">
                 </picture>
             </article>
-
-            <article>
-                <h2>Second article</h2>
-                <h3>Second article subtitle</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                    'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
-                    sometimes on purpose (injected humour and the like).</p>
-                <picture>
-                    <source media="(min-width: 650px)" srcset="https://picsum.photos/id/100/200/300">
-                    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/902/">
-                    <img src="https://picsum.photos/id/102/" alt="Picture">
+            <article id="article-2">
+                <div id="text-2" class="text">
+                    <h4>Second article</h4>
+                    <h5>Second article subtitle</h5>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+                        'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
+                        sometimes on purpose (injected humour and the like).</p>
+                </div>
+                <picture id="picture-2">
+                    <source media="(min-width: 640px)" srcset="https://picsum.photos/id/100/800/300">
+                    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/902/800/300">
+                    <img src="https://picsum.photos/id/102/800/300" alt="Picture">
                 </picture>
             </article>
-
-            <article>
-                <h2>Third article</h2>
-                <h3>Third article subtitle</h3>
-                <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
-                    'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
-                    sometimes on purpose (injected humour and the like).</p>
-                <picture>
-                    <source media="(min-width: 650px)" srcset="https://picsum.photos/id/1016/200/300">
-                    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/902/">
-                    <img src="https://picsum.photos/id/102/" alt="Picture">
+            <article id="article-3">
+                <div id="text-3" class="text">
+                    <h4>Third article</h4>
+                    <h5>Third article subtitle</h5>
+                    <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using
+                        'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident,
+                        sometimes on purpose (injected humour and the like).</p>
+                </div>
+                <picture id="picture-3">
+                    <source media="(min-width: 640px)" srcset="https://picsum.photos/id/1016/800/300">
+                    <source media="(min-width: 465px)" srcset="https://picsum.photos/id/902/800/300">
+                    <img src="https://picsum.photos/id/102/800/300" alt="Picture">
                 </picture>
             </article>
         </section>
+
     </main>
 
     <footer>
-        <p>&copy; - DevSchool 2020</p>
+        <p>
+            &copy; 2020 Travel Website - All rights reserved
+            <br/>
+            by Awesome DevSchoolers
+        </p>
+
     </footer>
 
 </body>
