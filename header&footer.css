@@ -1,0 +1,56 @@
+:root {
+    --color-purple: #535198;
+}
+
+body {
+    font-family: Serif;
+}
+
+
+.header {
+    background-color: var(--color-purple);
+    padding-bottom: 200px;
+}
+
+.nav-list {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    position: sticky;
+}
+
+.nav-list ul {
+    list-style: none;
+    display: flex;
+    color: ghostwhite;
+
+}
+
+.nav-list li {
+    border: 1px solid antiquewhite;
+    margin: 0 15px;
+}
+
+.nav-list a {
+    display: block;
+    min-width: 100px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+h1 {
+    padding-top: 100px;
+    text-align: center;
+    color: antiquewhite;
+    font-weight: bolder;
+}
+
+footer {
+    background-color: var(--color-purple);
+    text-align: center;
+}
+
+footer p {
+    color: antiquewhite;
+}

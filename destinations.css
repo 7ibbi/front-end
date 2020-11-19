@@ -1,0 +1,37 @@
+h3 {
+    text-align: center;
+    color: #535198;
+}
+
+h4 {
+    color: #535198;
+}
+
+a {
+    color: #535198;
+    text-decoration: none;
+}
+
+article {
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    /*max-height: fit-content;*/
+    margin-bottom: 20px;
+    max-height: 200px;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    margin: 0 13vw;
+    overflow: hidden;
+}
+
+div {
+    padding-left: 30px;
+    display: block;
+    overflow: scroll;
+}
+
+
