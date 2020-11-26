@@ -1,0 +1,64 @@
+* {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --color-purple: #535198;
+}
+
+body {
+    font-family: Serif;
+}
+
+
+.header {
+    background-color: var(--color-purple);
+    padding-bottom: 20vh;
+
+}
+
+.nav-list {
+    padding-top: 2em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.nav-list ul {
+    list-style: none;
+    display: flex;
+    color: ghostwhite;
+
+}
+
+.nav-list li {
+    border: 1px solid antiquewhite;
+    margin: 0 15px;
+}
+
+.nav-list a {
+    display: block;
+    min-width: 100px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+h1 {
+    padding-top: 100px;
+    text-align: center;
+    color: antiquewhite;
+    font-weight: bolder;
+}
+
+footer {
+    background-color: var(--color-purple);
+    text-align: center;
+}
+
+footer p {
+    color: antiquewhite;
+}
