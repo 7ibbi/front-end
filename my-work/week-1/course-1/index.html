@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DevSchool 2020</title>
+    <link rel="stylesheet" href="main.css"/>
+</head>
+<body>
+    <header>
+
+    </header>
+    <nav>
+        <ul class="nav-list">
+            <li>
+                <a href="#internet">Internet</a>
+            </li>
+            <li>
+                <a href="#ipaddress">IP Address</a>
+            </li>
+            <li>
+                <a href="#dns">DNS</a>
+            </li>
+            <li>
+                <a href="#client">Client</a>
+            </li>
+            <li>
+                <a href="#http">HTTP</a>
+            </li>
+            <li>
+                <a href="#formular">Formular</a>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+
+        <section class="section">
+            <h1>DevSchool 2020</h1>
+            <h2 id="internet">Internet</h2>
+            <p>
+                Retea de calculatoare, servere
+            </p>
+            <p>
+                O baza de date de resurse.
+            </p>
+            <img
+                    src="https://devschool-2020.web.app/assets/internet.png"
+                    alt="internet"
+                    width="200"
+            />
+            <blockquote>
+                <p>The internet is a design philosophy and an architecture expressed in a set of protocols.</p>
+                <img
+                        src="https://devschool-2020.web.app/assets/vint.png"
+                        alt="Vint Cerf"
+                        width="200"
+                />
+                - Vint Cerf (Internet co-creator)
+
+            </blockquote>
+
+        </section>
+        <section>
+            <h2 id="protocol">Protocol</h2>
+            <p>Un set de reguli, un standard.</p>
+
+            <h2 id="ipaddress">IP Address</h2>
+            <p>computer address = Internet Protocol Address (IP Address)</p>
+
+            <h2 id="dns">DNS</h2>
+            <p>Domain name system</p>
+            <p>Asociaza IP-urile cu niste domenii</p>
+            <table>
+                <tbody>
+                    <tr>
+                        <td>www.example.com</td>
+                        <td>192.0.2.0</td>
+                    </tr>
+                    <tr>
+                        <td>www.google.com</td>
+                        <td>172.217.16.174</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2 id="client">Web Client</h2>
+            <p>Account agent - program care reprezinta o persoana in contextul Web</p>
+            <p>Browser, aplicatie, bot, etc.</p>
+
+            <h2 id="http">HTTP</h2>
+            <p>Hypertext Transfer Protocol</p>
+            <p>Limbajul prin care comunica clientul cu un server</p>
+            <img
+                    src="https://devschool-2020.web.app/assets/http.png"
+                    alt="http"
+                    width="200"
+            />
+        </section>
+
+        <section>
+            <h2 id="request">HTTP Request methods</h2>
+            <ul>
+                <li>GET - retrieve resource</li>
+                <li>POST - send entity to resource</li>
+                <li>PATCH - apply partial modifications to a resource</li>
+                <li>PUT - replace resource</li>
+                <li>DELETE - delete resource</li>
+                <li>HEAD - similar to GET, but without body, check if resource exists</li>
+                <li>OPTIONS - describe the communication options for the target resource</li>
+            </ul>
+
+            <h2 id="response">HTTP Response codes</h2>
+            <ul>
+                <li>2xx - success</li>
+                <li>3xx - redirect</li>
+                <li>4xx - client error</li>
+                <li>5xx - server error</li>
+            </ul>
+        </section>
+
+        <section>
+            <span hidden></span>
+        </section>
+        <section id="formular">
+            <h2>Formular</h2>
+            <form action="/placeholder-endpoint" method="POST" target="_blank">
+                <label for="nume">Nume</label><br/>
+                <input type="text" id="nume" name="nume" /><br/><br/>
+                <label for="prenume">Prenume</label><br/>
+                <input type="text" id="prenume" name="prenume"/><br/><br/>
+                <label for="dataNasterii">Data Nasterii</label><br/>
+                <input type="text" id="dataNasterii" name="dataNasterii"/><br/><br/>
+                <label for="descriere">Descriere</label><br/>
+                <textarea id="descriere" name="descriere" cols="50" rows="5"></textarea><br/><br/>
+                <input type="submit" value="Submit" />
+            </form>
+        </section>
+
+    </main>
+    <footer>
+        <p>&copy; - DevSchool 2020</p>
+    </footer>
+</body>
+</html>
