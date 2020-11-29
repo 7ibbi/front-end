@@ -20,10 +20,10 @@ class Todo extends LitElement {
 
     render() {
         return html`
-            <li class="${this.done ? "todo-checked" : ""}">
-                        ${this.name}
-                        <input type="checkbox" ?checked="${this.done}" @click="${(event) => this.handleCheckboxClick(event, index)}"/>
-            </li>
+            <div class="${this.done ? "todo-checked" : ""}">
+                ${this.name} 
+                <input type="checkbox" ?checked="${this.done}" @click="${this.handleCheckboxClick}"/>
+            </div>
         `;
     }
 

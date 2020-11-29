@@ -46,15 +46,15 @@ class Todos extends LitElement {
         `;
     }
 
-    handleCheckboxClick(event, index) {
-        const new_todos = [...this.todos];
-        new_todos[index].done = event.currentTarget.checked;
-
-        this.todos = new_todos;
-        // console.log(event.target.checked);
-        // console.log(event.currentTarget.checked);
-        // console.log(index);
-    }
+    // handleCheckboxClick(event, index) {
+    //     const new_todos = [...this.todos];
+    //     new_todos[index].done = event.currentTarget.checked;
+    //
+    //     this.todos = new_todos;
+    //     // console.log(event.target.checked);
+    //     // console.log(event.currentTarget.checked);
+    //     // console.log(index);
+    // }
 }
 
 customElements.define('my-todos', Todos);

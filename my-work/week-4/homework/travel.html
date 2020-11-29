@@ -4,15 +4,11 @@
     <meta charset="UTF-8">
     <title>Travel</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="travel.css"/>
-    <link rel="stylesheet" href="header&footer.css"/>
+<!--    <link rel="stylesheet" href="travel.css"/>-->
+<!--    <link rel="stylesheet" href="header&footer.css"/>-->
 </head>
 <body>
-    <header class="header">
-        <header-element>
-
-        </header-element>
-    </header>
+    <app-header></app-header>
 
     <main>
         <section class="description">
@@ -70,15 +66,15 @@
 
     </main>
 
-    <footer>
-        <p>
-            &copy; 2020 Travel Website - All rights reserved
-            <br/>
-            by Awesome DevSchoolers
-        </p>
+    <app-footer></app-footer>
 
-    </footer>
+    <script type="module" src="src/app-header.js"></script>
+    <script type="module" src="src/app-footer.js"></script>
+    <script>
+        window.Polymer = {
+            useNativeCSSProperties: true
+        };
+    </script>
 
-    <script type="module" src="src/header.js"></script>
 </body>
 </html>
