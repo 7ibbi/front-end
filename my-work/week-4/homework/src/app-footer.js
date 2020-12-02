@@ -14,6 +14,9 @@ class AppFooter extends LitElement {
             footer {
                 background-color: var(--color-purple);
                 text-align: center;
+                position: relative;
+                bottom: 0;
+                width: 100%;
             }
 
             footer p {
