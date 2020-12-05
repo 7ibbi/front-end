@@ -7,34 +7,74 @@ class Todo extends LitElement {
         return css`
                 .todo-checked {
                     color: red;
+                    text-decoration: line-through;
                 }
             `;
     }
 
     static get properties() {
         return {
+            id: {type: Number},
             name: {type: String},
-            done: {type: Boolean}
+            done: {type: Boolean},
+            state: {type: String}
         };
+    }
+
+    constructor() {
+        super();
     }
 
     render() {
         return html`
+            
             <div class="${this.done ? "todo-checked" : ""}">
-                ${this.name} 
-                <input type="checkbox" ?checked="${this.done}" @click="${this.handleCheckboxClick}"/>
+                ${this.name}
+                ${this.state == "editing" ? 
+                    html`
+                        <input id="new-title" value="${this.name}">
+                        <button @click="${this.handleSaveEditClick}">Save</button>
+                        <button @click="${this.handleCancelEditClick}">Cancel</button>
+                    `
+                    :
+                    html`
+                        ${this.name}
+                        <input type="checkbox" ?checked="${this.done}" @click="${(event) => this.handleCheckboxClick(event)}"/>
+                        <button @click="${this.handleEditClick}">Edit</button>
+                    `} 
+
             </div>
         `;
     }
 
-    handleCheckboxClick(event, index) {
-        const new_todos = [...this.todos];
-        new_todos[index].done = event.currentTarget.checked;
+    handleCheckboxClick(event) {
+        this.dispatchEvent(new CustomEvent("checkboxClickEvent", {
+            detail: {
+                id: this.id,
+                done: event.target.checked,
+            }
+        }));
+    }
 
-        this.todos = new_todos;
-        // console.log(event.target.checked);
-        // console.log(event.currentTarget.checked);
-        // console.log(index);
+    handleEditClick(event) {
+        this.state = "editing";
+    }
+
+    handleCancelEditClick(event) {
+        this.state = "";
+    }
+
+    handleSaveEditClick(event) {
+        this.state = "";
+
+        console.log(this.shadowRoot.querySelector("#new-title").value);
+
+        this.dispatchEvent(new CustomEvent("handleTodoUpdateTitle", {
+            detail: {
+                id: this.id,
+                name: this.shadowRoot.querySelector("#new-title").value,
+            }
+        }));
     }
 }
 
