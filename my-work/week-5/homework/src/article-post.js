@@ -89,35 +89,9 @@ class ArticlePost extends LitElement {
         this.descriptionText = 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry\'s standard dummy text ever since the 1400s, when an unknown printer took a galley of type and scrambled it to make a\n' +
             'type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing\n' +
             'software like Aldus PageMaker including versions of Lorem Ipsum.';
-
-        // this.articles = [
-        //     {
-        //         title: 'First article err',
-        //         subtitle: 'First article subtitle',
-        //         articleText: 'Article 1 text',
-        //         imgUrl: ''
-        //     },
-        //     {
-        //         title: 'Second article err',
-        //         subtitle: 'Second article subtitle err',
-        //         articleText: 'Article 2 text',
-        //         imgUrl: ''
-        //     },
-        //     {
-        //         title: 'Third article err',
-        //         subtitle: 'Third article subtitle',
-        //         articleText: 'Article 3 text',
-        //         imgUrl: ''
-        //     },
-        // ]
-
-        // console.log("In constructor" + this.articles);
     }
 
     render() {
-        console.log("In render()");
-        // console.log(this.articles);
-
         return html`
             <main>
                 <section class="description">   
@@ -129,7 +103,6 @@ class ArticlePost extends LitElement {
                 
                 <section class="article">
                     ${this.articles.map((item, index) => {
-                        console.log(item);
                         if (index % 2 === 0) {
                             return html`
                                 <article class="row-reverse">
@@ -138,7 +111,7 @@ class ArticlePost extends LitElement {
                                         <h5>${item.subtitle}</h5>
                                         <p>${item.articleText}</p>
                                     </div>
-                                    <img src="https://picsum.photos/id/${Math.floor(Math.random() * 1000)}/600/400" alt="Picture">
+                                    <img src=${item.imageUrl} alt="Picture">
                                 </article>
                             `
                         } else {
@@ -149,7 +122,7 @@ class ArticlePost extends LitElement {
                                         <h5>${item.subtitle}</h5>
                                         <p>${item.articleText}</p>
                                     </div>
-                                    <img src="https://picsum.photos/seed/picsum/600/400" alt="Picture">
+                                    <img src=${item.imageUrl} alt="Picture">
                                 </article>
                             `
                         }
@@ -166,33 +139,23 @@ class ArticlePost extends LitElement {
     }
 
     getArticlesFromServer() {
-        const axios = window.axios;
-        this.articles = [];
-        console.log(this.articles);
-
-        // axios
-        //     .get('https://devschool-2020.firebaseio.com/tiberiu-rusu/articles.json')
-        //     .then((response) => {
-        //         console.log(response.data.);
-        //     })
-        //     .catch(error => console.log(error));
-
          fetch('https://devschool-2020.firebaseio.com/tiberiu-rusu/articles.json')
             .then((response) => response.json())
             .then((data) => {
                 let articlesArray = [];
-                Object.keys(data).forEach((key, index) => {
-                    // this.articles.push(data[key]);
+                Object.keys(data).forEach(key => {
+                    console.log(data);
                     articlesArray.push({
                         title: data[key].title,
                         subtitle: data[key].subtitle,
                         articleText: data[key].description,
-                        imgUrl: data[key].imageURL});
+                        imageUrl: data[key].imageURL,
+                    });
                 });
                 this.articles = [...articlesArray];
-            });
-
-        // console.log(this.articles);
+                console.log(this.articles);
+            })
+           .catch(error => console.log(error));
     }
 }
 
