@@ -1,6 +1,6 @@
 import {
     LitElement, html, css
-} from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module'
+} from 'lit-element'
 
 class ArticlePost extends LitElement {
     static get styles() {
@@ -150,7 +150,6 @@ class ArticlePost extends LitElement {
             .then((data) => {
                 let articlesArray = [];
                 Object.keys(data).forEach(key => {
-                    console.log(data);
                     articlesArray.push({
                         title: data[key].title,
                         subtitle: data[key].subtitle,
@@ -159,10 +158,9 @@ class ArticlePost extends LitElement {
                     });
                 });
                 this.articles = [...articlesArray];
-                console.log(this.articles);
             })
            .catch(error => console.log(error));
     }
 }
 
-customElements.define('article-post', ArticlePost);
+export default customElements.define('article-post', ArticlePost);

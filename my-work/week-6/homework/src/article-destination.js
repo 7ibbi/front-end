@@ -1,6 +1,11 @@
 import {
     LitElement, html, css
-} from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module'
+} from 'lit-element'
+
+import axios from 'axios';
+
+import './app-header.js';
+import './app-footer.js';
 
 class ArticleDestination extends LitElement {
     static get styles() {
@@ -65,6 +70,8 @@ class ArticleDestination extends LitElement {
 
     render() {
         return html`
+            <app-header></app-header>
+
             <main>
                 <section>
                     <h3>${this.title}</h3>
@@ -85,6 +92,8 @@ class ArticleDestination extends LitElement {
                     </div>
                 </section>
             </main>
+            
+            <app-footer></app-footer>
         `
     }
 
@@ -95,8 +104,6 @@ class ArticleDestination extends LitElement {
     }
 
     getDestinations() {
-        const axios = window.axios;
-
         axios
             .get('https://devschool-2020.firebaseio.com/tiberiu-rusu/destinations.json')
             .then(response => response.data)
@@ -117,4 +124,4 @@ class ArticleDestination extends LitElement {
     }
 }
 
-customElements.define('article-destination', ArticleDestination);
+export default customElements.define('article-destination', ArticleDestination);

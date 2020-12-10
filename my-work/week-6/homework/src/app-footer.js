@@ -1,8 +1,8 @@
 import {
     LitElement, html, css
-} from 'https://unpkg.com/lit-element@2.4.0/lit-element.js?module'
+} from 'lit-element'
 
-import {unsafeHTML} from 'https://unpkg.com/lit-html@latest/directives/unsafe-html.js?module';
+// import {unsafeHTML} from 'https://unpkg.com/lit-html@latest/directives/unsafe-html.js?module';
 
 class AppFooter extends LitElement {
     static get styles() {
@@ -31,13 +31,6 @@ class AppFooter extends LitElement {
         `;
     }
 
-    static get properties() {
-        return {
-            footerText: {type: String}
-        };
-
-    }
-
     constructor() {
         super();
 
@@ -50,11 +43,13 @@ class AppFooter extends LitElement {
         return html`
             <footer>
                 <p>
-                    ${unsafeHTML(this.footerText)}
+                    &copy; 2020 Travel Website - All rights reserved
+                    <br/>
+                    by Awesome DevSchoolers
                 </p>
             </footer>
         `;
     }
 }
 
-customElements.define('app-footer', AppFooter);
+export default customElements.define('app-footer', AppFooter);
