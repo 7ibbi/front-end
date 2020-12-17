@@ -4,8 +4,8 @@ import {
 
 import axios from 'axios';
 
-import './app-header.js';
-import './app-footer.js';
+import {request} from './lib.js'
+
 
 class ArticleDestination extends LitElement {
     static get styles() {
@@ -70,8 +70,6 @@ class ArticleDestination extends LitElement {
 
     render() {
         return html`
-            <app-header></app-header>
-
             <main>
                 <section>
                     <h3>${this.title}</h3>
@@ -93,7 +91,6 @@ class ArticleDestination extends LitElement {
                 </section>
             </main>
             
-            <app-footer></app-footer>
         `
     }
 
@@ -103,10 +100,28 @@ class ArticleDestination extends LitElement {
         this.getDestinations();
     }
 
-    getDestinations() {
-        axios
-            .get('https://devschool-2020.firebaseio.com/tiberiu-rusu/destinations.json')
-            .then(response => response.data)
+    async getDestinations() {
+        // axios
+        //     .get('https://devschool-2020.firebaseio.com/tiberiu-rusu/destinations.json')
+        //     .then(response => response.data)
+        //     .then(data => {
+        //         let destinationsArray = [];
+        //         Object.keys(data).forEach(key => {
+        //             destinationsArray.push({
+        //                 destinationTitle: data[key].destinationTitle,
+        //                 destinationDescription: data[key].destinationDescription,
+        //                 moreUrl: data[key].moreUrl,
+        //                 linkText: data[key].linkText,
+        //                 imageUrl: data[key].imageUrl,
+        //             });
+        //         });
+        //         this.destinations = [...destinationsArray];
+        //     })
+        //     .catch(error => console.log(error));
+
+        localStorage.setItem('token', 'ana are mere');
+
+        const response = await request('https://devschool-2020.firebaseio.com/tiberiu-rusu/destinations.json')
             .then(data => {
                 let destinationsArray = [];
                 Object.keys(data).forEach(key => {

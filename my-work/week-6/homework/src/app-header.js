@@ -10,14 +10,16 @@ class AppHeader extends LitElement {
                 border: 0;
                 margin: 0;
                 padding: 0;
+                background-color: var(--color);
             }
             
             :host {
                 --color-purple: #535198;
+                background-color: var(--color);
             }
             
             header {
-                background-color: var(--color-purple);
+                background-color: var(--color);
                 padding-bottom: 20vh;
             }
             
@@ -27,6 +29,10 @@ class AppHeader extends LitElement {
                 justify-content: center;
                 text-align: center;
             
+            }
+            
+            .active {
+                border: 1px solid red !important;
             }
             
             .nav-list ul {
@@ -61,7 +67,9 @@ class AppHeader extends LitElement {
     static get properties() {
         return {
             navElement: {type: Array},
-            title: {type: String}
+            title: {type: String},
+            currentPath: {type: String},
+            theme: {type: String}
         };
     }
 
@@ -82,7 +90,9 @@ class AppHeader extends LitElement {
                 name: 'language',
                 link: '#'
             }
-        ]
+        ];
+        this.currentPath = window.location.pathname;
+        this.theme = localStorage.getItem('theme') || 'light';
 
     }
 
@@ -91,18 +101,57 @@ class AppHeader extends LitElement {
             <header class="header">
                 <nav class="nav-list">
                     <ul>
-                         ${this.navElement.map(item => {
-                            return html`
-                                <li>
-                                    <a href=${item.link}>${item.name}</a>
-                                </li>
-                            ` 
-                         })}
+                        <li id="home" class="${this.currentPath === '/' ? 'active' : ''}">
+                            <a href="/">Home</a>
+                        </li>
+                        <li id="destinations" class="${this.currentPath === '/destinations' ? 'active' : ''}">
+                            <a href="/destinations">Destinations</a>
+                        </li>
+                        <li>
+                            <a href="#">Language</a>
+                        </li>
+                        <li>
+                            <label><input type="checkbox" @change="${this.changeTheme}"/>Use dark theme</label>
+                        </li>
                     </ul>
                 </nav>
                 <h1>${this.title}</h1>
             </header>
         `;
+    }
+
+    connectedCallback() {
+        super.connectedCallback();
+
+        window.addEventListener('vaadin-router-location-changed', (event) => {
+            this.currentPath = event.detail.location.pathname;
+
+            // if (this.cu == '/') {
+            //     this.shadowRoot.querySelector('#home').classList.add('active');
+            // } else if (pathname == '/destinations') {
+            //     this.shadowRoot.querySelector('#destinations').classList.add('active');
+            // }
+        });
+    }
+
+    updated(changedProperties) {
+        if (changedProperties.has('theme')) {
+            this.updateTheme();
+        }
+    }
+
+    updateTheme() {
+        document.head.querySelector('link[data-theme]')?.remove();
+        const themeStyle = document.createElement('link');
+        themeStyle.dataset.theme = this.theme;
+        themeStyle.rel = 'stylesheet';
+        themeStyle.href = `./css/${this.theme}.css`;
+        document.head.appendChild(themeStyle);
+        localStorage.setItem('theme', this.theme);
+    }
+
+    changeTheme() {
+        this.theme = this.theme === 'dark' ? 'light' : 'dark';
     }
 }
 
