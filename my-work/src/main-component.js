@@ -4,7 +4,6 @@ import {
 
 
 import './article-post.js';
-// import './article-destination.js';
 
 class MainComponent extends LitElement {
     render() {
